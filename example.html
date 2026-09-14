@@ -1,0 +1,525 @@
+<html lang="ko" data-bs-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Rockie - 데스크톱 애완돌 키우기" />
+    <meta name="author" content="jeondowon" />
+    <title>Rockie · 데스크톱 애완돌 키우기</title>
+    <link
+      rel="canonical"
+      href="https://getbootstrap.com/docs/5.3/examples/heroes/"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="apple-touch-icon"
+      href="/docs/5.3/assets/img/favicons/apple-touch-icon.png"
+      sizes="180x180"
+    />
+    <link
+      rel="icon"
+      href="/docs/5.3/assets/img/favicons/favicon-32x32.png"
+      sizes="32x32"
+      type="image/png"
+    />
+    <link
+      rel="icon"
+      href="/docs/5.3/assets/img/favicons/favicon-16x16.png"
+      sizes="16x16"
+      type="image/png"
+    />
+    <link rel="manifest" href="/docs/5.3/assets/img/favicons/manifest.json" />
+    <link
+      rel="mask-icon"
+      href="/docs/5.3/assets/img/favicons/safari-pinned-tab.svg"
+      color="#712cf9"
+    />
+    <link rel="icon" href="/docs/5.3/assets/img/favicons/favicon.ico" />
+    <meta name="theme-color" content="#712cf9" />
+    <style>
+      @media (min-width: 992px) {
+        .rounded-lg-3 {
+          border-radius: 0.3rem;
+        }
+      }
+    </style>
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+      .b-example-divider {
+        width: 100%;
+        height: 3rem;
+        background-color: #0000001a;
+        border: solid rgba(0, 0, 0, 0.15);
+        border-width: 1px 0;
+        box-shadow:
+          inset 0 0.5em 1.5em #0000001a,
+          inset 0 0.125em 0.5em #00000026;
+      }
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+      .bi {
+        vertical-align: -0.125em;
+        fill: currentColor;
+      }
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+      .btn-bd-primary {
+        --bd-violet-bg: #712cf9;
+        --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+        --bs-btn-font-weight: 600;
+        --bs-btn-color: var(--bs-white);
+        --bs-btn-bg: var(--bd-violet-bg);
+        --bs-btn-border-color: var(--bd-violet-bg);
+        --bs-btn-hover-color: var(--bs-white);
+        --bs-btn-hover-bg: #6528e0;
+        --bs-btn-hover-border-color: #6528e0;
+        --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+        --bs-btn-active-color: var(--bs-btn-hover-color);
+        --bs-btn-active-bg: #5a23c8;
+        --bs-btn-active-border-color: #5a23c8;
+      }
+      .bd-mode-toggle {
+        z-index: 1500;
+      }
+      .bd-mode-toggle .bi {
+        width: 1em;
+        height: 1em;
+      }
+      .bd-mode-toggle .dropdown-menu .active .bi {
+        display: block !important;
+      }
+    </style>
+  </head>
+  <body>
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+      <symbol id="check2" viewBox="0 0 16 16">
+        <path
+          d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"
+        ></path>
+      </symbol>
+      <symbol id="circle-half" viewBox="0 0 16 16">
+        <path
+          d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"
+        ></path>
+      </symbol>
+      <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+        <path
+          d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"
+        ></path>
+        <path
+          d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"
+        ></path>
+      </symbol>
+      <symbol id="sun-fill" viewBox="0 0 16 16">
+        <path
+          d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"
+        ></path>
+      </symbol>
+    </svg>
+    <div
+      class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle"
+    >
+      <button
+        class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center"
+        id="bd-theme"
+        type="button"
+        aria-expanded="false"
+        data-bs-toggle="dropdown"
+        aria-label="Toggle theme (dark)"
+      >
+        <svg class="bi my-1 theme-icon-active" aria-hidden="true">
+          <use href="#moon-stars-fill"></use>
+        </svg>
+        <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+      </button>
+      <ul
+        class="dropdown-menu dropdown-menu-end shadow"
+        aria-labelledby="bd-theme-text"
+      >
+        <li>
+          <button
+            type="button"
+            class="dropdown-item d-flex align-items-center"
+            data-bs-theme-value="light"
+            aria-pressed="false"
+          >
+            <svg class="bi me-2 opacity-50" aria-hidden="true">
+              <use href="#sun-fill"></use>
+            </svg>
+            Light
+            <svg class="bi ms-auto d-none" aria-hidden="true">
+              <use href="#check2"></use>
+            </svg>
+          </button>
+        </li>
+        <li>
+          <button
+            type="button"
+            class="dropdown-item d-flex align-items-center active"
+            data-bs-theme-value="dark"
+            aria-pressed="true"
+          >
+            <svg class="bi me-2 opacity-50" aria-hidden="true">
+              <use href="#moon-stars-fill"></use>
+            </svg>
+            Dark
+            <svg class="bi ms-auto d-none" aria-hidden="true">
+              <use href="#check2"></use>
+            </svg>
+          </button>
+        </li>
+        <li>
+          <button
+            type="button"
+            class="dropdown-item d-flex align-items-center"
+            data-bs-theme-value="auto"
+            aria-pressed="false"
+          >
+            <svg class="bi me-2 opacity-50" aria-hidden="true">
+              <use href="#circle-half"></use>
+            </svg>
+            Auto
+            <svg class="bi ms-auto d-none" aria-hidden="true">
+              <use href="#check2"></use>
+            </svg>
+          </button>
+        </li>
+      </ul>
+    </div>
+    <main>
+      <h1 class="visually-hidden">Rockie 소개</h1>
+      <div class="px-4 py-5 my-5 text-center">
+        <!-- TODO: 로고 이미지 교체 필요 (src만 원하는 이미지로 바꾸면 됨) -->
+        <img
+          class="d-block mx-auto mb-4"
+          src="images/rockie_icon.png"
+          alt="Rockie 아이콘"
+          width="72"
+          height="72"
+        />
+        <h1 class="display-5 fw-bold text-body-emphasis">
+          Rockie · 데스크톱 애완돌 키우기
+        </h1>
+        <div class="col-lg-6 mx-auto">
+          <p class="lead mb-4">
+            화면 위에 사는 작은 돌, Rockie. 마우스를 따라다니고, 쓰다듬으면
+            반응하고, 나에게 말을 거는 데스크톱 펫이에요. 매일 질문에 답하면
+            성향에 맞게 여러가지 돌 중 하나로 자라나요.
+          </p>
+          <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+            <button type="button" class="btn btn-primary btn-lg px-4 gap-3">
+              무료 다운로드
+            </button>
+            <button type="button" class="btn btn-outline-secondary btn-lg px-4">
+              캐릭터 보기
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="b-example-divider"></div>
+      <div class="px-4 pt-5 my-5 text-center border-bottom">
+        <h1 class="display-4 fw-bold text-body-emphasis">
+          부담 없이 곁에 두는 데스크톱 친구
+        </h1>
+        <div class="col-lg-6 mx-auto">
+          <p class="lead mb-4">
+            Rockie는 컴퓨터 안에서 하루를 함께 보내는 작은 애완돌이에요.
+            나를 닮은 돌이 자라는 과정을 지켜보세요.
+          </p>
+          <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
+            <button type="button" class="btn btn-primary btn-lg px-4 me-sm-3">
+              무료 다운로드
+            </button>
+            <button type="button" class="btn btn-outline-secondary btn-lg px-4">
+              GitHub 보기
+            </button>
+          </div>
+        </div>
+        <div class="overflow-hidden" style="max-height: 30vh">
+          <div class="container px-5">
+            <!-- TODO: 이미지 교체 필요 (src만 원하는 이미지로 바꾸면 됨) -->
+            <img
+              src="images/rockie.png"
+              class="img-fluid border rounded-3 shadow-lg mb-4"
+              alt="Rockie 앱 스크린샷"
+              width="700"
+              height="500"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="b-example-divider"></div>
+      <div class="container col-xxl-8 px-4 py-5">
+        <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+          <div class="col-10 col-sm-8 col-lg-6">
+            <!-- TODO: 이미지 교체 필요 (src만 원하는 이미지로 바꾸면 됨) -->
+            <img
+              src="images/rockie_smile.gif"
+              class="d-block mx-lg-auto img-fluid"
+              alt="쓰다듬으면 웃는 Rockie"
+              width="500"
+              height="500"
+              loading="lazy"
+            />
+          </div>
+          <div class="col-lg-6">
+            <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">
+              커서를 따라다니고, 쓰다듬으면 반응해요
+            </h1>
+            <p class="lead">
+              화면 아래를 거닐며 마우스를 살랑살랑 쫓아오고, 클릭하면
+              말을 걸 수 있어요. 배터리가 없으면 알려주기도, 가끔 먼저
+              말을 걸기도 해요.
+            </p>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+              <button type="button" class="btn btn-primary btn-lg px-4 me-md-2">
+                무료 다운로드
+              </button>
+              <button
+                type="button"
+                class="btn btn-outline-secondary btn-lg px-4"
+              >
+                자세히 보기
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="b-example-divider"></div>
+      <div class="container col-xl-10 col-xxl-8 px-4 py-5">
+        <div class="row align-items-center g-lg-5 py-5">
+          <div class="col-lg-7 text-center text-lg-start">
+            <h1 class="display-4 fw-bold lh-1 text-body-emphasis mb-3">
+              여러가지 기능을 지원해요
+            </h1>
+            <p class="col-lg-10 fs-4">
+              키보드 청소 모드, 집중 모드, 쪽잠 모드 등을 지원해요. 시스템
+              모니터링으로 나의 컴퓨터 상태까지 확인할 수 있어요. 출시 알림을
+              받고 싶다면 이메일을 남겨주세요.
+            </p>
+          </div>
+          <div class="col-md-10 mx-auto col-lg-5">
+            <form class="p-4 p-md-5 border rounded-3 bg-body-tertiary">
+              <div class="form-floating mb-3">
+                <input
+                  type="email"
+                  class="form-control"
+                  id="floatingInput"
+                  placeholder="name@example.com"
+                />
+                <label for="floatingInput">이메일 주소</label>
+              </div>
+              <div class="checkbox mb-3">
+                <label>
+                  <input type="checkbox" value="notify-me" /> 업데이트 소식
+                  받기
+                </label>
+              </div>
+              <button class="w-100 btn btn-lg btn-primary" type="submit">
+                출시 알림 신청
+              </button>
+              <hr class="my-4" />
+              <small class="text-body-secondary"
+                >Rockie는 완전 무료, 오픈소스예요.</small
+              >
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="b-example-divider"></div>
+      <div class="container my-5">
+        <div
+          class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg"
+        >
+          <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
+            <h1 class="display-4 fw-bold lh-1 text-body-emphasis">
+              답할수록 성향이 자라나요
+            </h1>
+            <p class="lead">
+              매일 건네는 성향 질문에 답하면, 조약돌이 나를 닮은 네 가지 돌
+              (화강암 · 현무암 · 대리석 · 편마암) 중 하나로 진화해요. 이후
+              성향에 따라 변성체를 거쳐 보석으로 자라나요.
+            </p>
+            <div
+              class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3"
+            >
+              <button
+                type="button"
+                class="btn btn-primary btn-lg px-4 me-md-2 fw-bold"
+              >
+                무료 다운로드
+              </button>
+              <button
+                type="button"
+                class="btn btn-outline-secondary btn-lg px-4"
+              >
+                캐릭터 보기
+              </button>
+            </div>
+          </div>
+          <div class="col-lg-4 offset-lg-1 p-0 overflow-hidden shadow-lg">
+            <!-- TODO: 이미지 교체 필요 (src만 원하는 이미지로 바꾸면 됨) -->
+            <img
+              class="rounded-lg-3"
+              src="images/rockie.png"
+              alt="Rockie 앱 스크린샷"
+              width="720"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="b-example-divider"></div>
+      <div class="bg-dark text-secondary px-4 py-5 text-center">
+        <div class="py-5">
+          <h1 class="display-5 fw-bold text-white">
+            지금, 내 화면에 Rockie를 데려오기
+          </h1>
+          <div class="col-lg-6 mx-auto">
+            <p class="fs-5 mb-4">
+              설치하고 실행하면 바로 곁에 나타나요. 완전 무료, 오픈소스예요.
+              Rockie는 1인 개발 프로젝트예요 — 여러분의 응원이 다음 돌,
+              다음 보석, 다음 기능을 만들어요.
+            </p>
+            <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+              <button
+                type="button"
+                class="btn btn-outline-info btn-lg px-4 me-sm-3 fw-bold"
+              >
+                무료 다운로드
+              </button>
+              <button type="button" class="btn btn-outline-light btn-lg px-4">
+                후원하기
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="b-example-divider mb-0"></div>
+    </main>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      (() => {
+        "use strict";
+
+        const getStoredTheme = () => localStorage.getItem("theme");
+        const setStoredTheme = (theme) => localStorage.setItem("theme", theme);
+
+        const getPreferredTheme = () => {
+          const storedTheme = getStoredTheme();
+          if (storedTheme) {
+            return storedTheme;
+          }
+          return window.matchMedia("(prefers-color-scheme: dark)").matches
+            ? "dark"
+            : "light";
+        };
+
+        const setTheme = (theme) => {
+          if (theme === "auto") {
+            document.documentElement.setAttribute(
+              "data-bs-theme",
+              window.matchMedia("(prefers-color-scheme: dark)").matches
+                ? "dark"
+                : "light"
+            );
+          } else {
+            document.documentElement.setAttribute("data-bs-theme", theme);
+          }
+        };
+
+        setTheme(getPreferredTheme());
+
+        const showActiveTheme = (theme, focus = false) => {
+          const themeSwitcher = document.querySelector("#bd-theme");
+
+          if (!themeSwitcher) {
+            return;
+          }
+
+          const themeSwitcherText = document.querySelector("#bd-theme-text");
+          const activeThemeIcon = document.querySelector(".theme-icon-active use");
+          const btnToActive = document.querySelector(
+            `[data-bs-theme-value="${theme}"]`
+          );
+          const svgOfActiveBtn = btnToActive
+            .querySelector("svg use")
+            .getAttribute("href");
+
+          document.querySelectorAll("[data-bs-theme-value]").forEach((element) => {
+            element.classList.remove("active");
+            element.setAttribute("aria-pressed", "false");
+          });
+
+          btnToActive.classList.add("active");
+          btnToActive.setAttribute("aria-pressed", "true");
+          activeThemeIcon.setAttribute("href", svgOfActiveBtn);
+          const themeSwitcherLabel = `${themeSwitcherText.textContent} (${btnToActive.dataset.bsThemeValue})`;
+          themeSwitcher.setAttribute("aria-label", themeSwitcherLabel);
+
+          if (focus) {
+            themeSwitcher.focus();
+          }
+        };
+
+        window
+          .matchMedia("(prefers-color-scheme: dark)")
+          .addEventListener("change", () => {
+            const storedTheme = getStoredTheme();
+            if (storedTheme !== "light" && storedTheme !== "dark") {
+              setTheme(getPreferredTheme());
+            }
+          });
+
+        window.addEventListener("DOMContentLoaded", () => {
+          showActiveTheme(getPreferredTheme());
+
+          document.querySelectorAll("[data-bs-theme-value]").forEach((toggle) => {
+            toggle.addEventListener("click", () => {
+              const theme = toggle.getAttribute("data-bs-theme-value");
+              setStoredTheme(theme);
+              setTheme(theme);
+              showActiveTheme(theme, true);
+            });
+          });
+        });
+      })();
+    </script>
+  </body>
+</html>
