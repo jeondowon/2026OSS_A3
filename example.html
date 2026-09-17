@@ -243,7 +243,9 @@
               무료 다운로드
             </button>
             <button type="button" class="btn btn-outline-secondary btn-lg px-4">
-              캐릭터 보기
+              <a href="https://jeondowon.com/rockie" target="_blank">
+                캐릭터 보기
+              </a>
             </button>
           </div>
         </div>
@@ -255,15 +257,17 @@
         </h1>
         <div class="col-lg-6 mx-auto">
           <p class="lead mb-4">
-            Rockie는 컴퓨터 안에서 하루를 함께 보내는 작은 애완돌이에요.
-            나를 닮은 돌이 자라는 과정을 지켜보세요.
+            Rockie는 컴퓨터 안에서 하루를 함께 보내는 작은 애완돌이에요. 나를
+            닮은 돌이 자라는 과정을 지켜보세요.
           </p>
           <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
             <button type="button" class="btn btn-primary btn-lg px-4 me-sm-3">
               무료 다운로드
             </button>
             <button type="button" class="btn btn-outline-secondary btn-lg px-4">
-              GitHub 보기
+              <a href="https://github.com/jeondowon/rockie" target="_blank">
+                GitHub 보기
+              </a>
             </button>
           </div>
         </div>
@@ -300,9 +304,8 @@
               커서를 따라다니고, 쓰다듬으면 반응해요
             </h1>
             <p class="lead">
-              화면 아래를 거닐며 마우스를 살랑살랑 쫓아오고, 클릭하면
-              말을 걸 수 있어요. 배터리가 없으면 알려주기도, 가끔 먼저
-              말을 걸기도 해요.
+              화면 아래를 거닐며 마우스를 살랑살랑 쫓아오고, 클릭하면 말을 걸 수
+              있어요. 배터리가 없으면 알려주기도, 가끔 먼저 말을 걸기도 해요.
             </p>
             <div class="d-grid gap-2 d-md-flex justify-content-md-start">
               <button type="button" class="btn btn-primary btn-lg px-4 me-md-2">
@@ -344,8 +347,7 @@
               </div>
               <div class="checkbox mb-3">
                 <label>
-                  <input type="checkbox" value="notify-me" /> 업데이트 소식
-                  받기
+                  <input type="checkbox" value="notify-me" /> 업데이트 소식 받기
                 </label>
               </div>
               <button class="w-100 btn btn-lg btn-primary" type="submit">
@@ -410,8 +412,8 @@
           <div class="col-lg-6 mx-auto">
             <p class="fs-5 mb-4">
               설치하고 실행하면 바로 곁에 나타나요. 완전 무료, 오픈소스예요.
-              Rockie는 1인 개발 프로젝트예요 — 여러분의 응원이 다음 돌,
-              다음 보석, 다음 기능을 만들어요.
+              Rockie는 1인 개발 프로젝트예요 — 여러분의 응원이 다음 돌, 다음
+              보석, 다음 기능을 만들어요.
             </p>
             <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
               <button
@@ -457,7 +459,7 @@
               "data-bs-theme",
               window.matchMedia("(prefers-color-scheme: dark)").matches
                 ? "dark"
-                : "light"
+                : "light",
             );
           } else {
             document.documentElement.setAttribute("data-bs-theme", theme);
@@ -474,18 +476,22 @@
           }
 
           const themeSwitcherText = document.querySelector("#bd-theme-text");
-          const activeThemeIcon = document.querySelector(".theme-icon-active use");
+          const activeThemeIcon = document.querySelector(
+            ".theme-icon-active use",
+          );
           const btnToActive = document.querySelector(
-            `[data-bs-theme-value="${theme}"]`
+            `[data-bs-theme-value="${theme}"]`,
           );
           const svgOfActiveBtn = btnToActive
             .querySelector("svg use")
             .getAttribute("href");
 
-          document.querySelectorAll("[data-bs-theme-value]").forEach((element) => {
-            element.classList.remove("active");
-            element.setAttribute("aria-pressed", "false");
-          });
+          document
+            .querySelectorAll("[data-bs-theme-value]")
+            .forEach((element) => {
+              element.classList.remove("active");
+              element.setAttribute("aria-pressed", "false");
+            });
 
           btnToActive.classList.add("active");
           btnToActive.setAttribute("aria-pressed", "true");
@@ -510,14 +516,16 @@
         window.addEventListener("DOMContentLoaded", () => {
           showActiveTheme(getPreferredTheme());
 
-          document.querySelectorAll("[data-bs-theme-value]").forEach((toggle) => {
-            toggle.addEventListener("click", () => {
-              const theme = toggle.getAttribute("data-bs-theme-value");
-              setStoredTheme(theme);
-              setTheme(theme);
-              showActiveTheme(theme, true);
+          document
+            .querySelectorAll("[data-bs-theme-value]")
+            .forEach((toggle) => {
+              toggle.addEventListener("click", () => {
+                const theme = toggle.getAttribute("data-bs-theme-value");
+                setStoredTheme(theme);
+                setTheme(theme);
+                showActiveTheme(theme, true);
+              });
             });
-          });
         });
       })();
     </script>
