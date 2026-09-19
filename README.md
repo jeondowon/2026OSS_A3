@@ -25,12 +25,13 @@ index.html 목록에는 6개 필드 중 포스터, 제목, 장르, 감독, 평�
 
 ## Validation
 
-add.html과 edit.html에 공통으로 쓰이는 validateAddForm() / validateEditForm() 함수를 만들어서, form의 onsubmit에서 호출하는 방식으로 4가지 검증을 적용했습니다.
+add.html과 edit.html에 공통으로 쓰이는 validateAddForm() / validateEditForm() 함수를 만들어서, form의 onsubmit에서 호출하는 방식으로 5가지 검증을 적용했습니다.
 
-1. 필수값 입력 여부 - 제목, 장르, 감독, 평점이 비어 있으면 alert 후 제출을 막음
-2. 문자열 길이 - 제목이 2자 미만이거나 80자를 초과하면 막음
-3. 숫자 범위 - 평점이 1~5 범위를 벗어나면 막음
-4. Select 선택 여부 - 장르를 선택하지 않으면 막음
+1. 필수값 입력 여부 - 제목, 감독, 평점이 비어 있으면 alert 후 제출을 막음
+2. Select 선택 여부 - 장르를 선택하지 않으면 alert 후 제출을 막음
+3. 문자열 길이 - 제목이 2자 미만이거나 80자를 초과하면 막음
+4. 숫자 범위 - 평점이 1~5 범위를 벗어나면 막음
+5. URL 형식 - 포스터 이미지 URL을 입력한 경우, http(s):// 로 시작하거나 images/ 경로의 이미지 파일(jpg, png, gif, webp)이 아니면 막음
 
 검증을 다 통과해야 add.html에서는 alert("게시물이 추가됩니다.")가 뜨고, edit.html에서는 confirm("게시물을 수정할까요?")이 떠서 취소를 누르면 수정이 취소됩니다. view.html의 Delete 버튼도 confirm으로 한 번 더 확인하도록 했습니다.
 
