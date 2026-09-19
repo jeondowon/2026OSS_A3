@@ -38,7 +38,7 @@ add.html과 edit.html에 공통으로 쓰이는 validateAddForm() / validateEdit
 
 - Bootstrap Grid(container, row/col)와 d-none/d-md-block, d-md-none 유틸리티로 Desktop에서는 Table, Mobile에서는 Card List가 보이도록 나눴습니다.
 - my.css에 Media Query를 추가해서 576px 이하에서는 여백과 폼 카드 너비를, 576~992px 구간에서는 상세 페이지 포스터 크기를 조정했습니다.
-- 네비게이션 바는 Bootstrap navbar-toggler + collapse를 이용해 Mobile에서 햄버거 메뉴로 접히게 했습니다.
+- 네비게이션 바는 Bootstrap navbar-toggler, collapse를 이용해 Mobile에서 햄버거 메뉴로 접히게 했습니다.
 
 ## Bootstrap
 
